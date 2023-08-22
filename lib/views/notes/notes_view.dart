@@ -32,25 +32,30 @@ class _NotesViewState extends State<NotesView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Main UI"),
+        title: const Text("Your Notes"),
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(newNoteRoute);
+            },
+            icon: const Icon(Icons.add),
+          ),
           PopupMenuButton<MenuAction>(
-            onSelected: (value) async{
-              switch (value){
+            onSelected: (value) async {
+              switch (value) {
                 case MenuAction.logout:
                   final shouldLogout = await showLogoutDialog(context);
-                  if(shouldLogout){
+                  if (shouldLogout) {
                     await AuthService.firebase().logOut();
-                    Navigator.of(context).pushNamedAndRemoveUntil(loginRoute, (_) => false);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil(loginRoute, (_) => false);
                   }
               }
             },
             itemBuilder: (context) {
-              return const[
+              return const [
                 PopupMenuItem<MenuAction>(
-                value: MenuAction.logout, 
-                child: Text("Logout")
-                )
+                    value: MenuAction.logout, child: Text("Logout"))
               ];
             },
           )
