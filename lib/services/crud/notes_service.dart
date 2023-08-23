@@ -15,7 +15,7 @@ class NotesService{
     _notesStreamController = StreamController<List<DatabaseNote>>.broadcast(
       onListen: (){
         _notesStreamController.sink.add(_notes);
-      }
+      },
     );
   }
   factory NotesService() => _shared;
