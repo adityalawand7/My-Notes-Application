@@ -69,7 +69,10 @@ class _RegisterViewState extends State<RegisterView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Enter your email and create a new password to get goin!'),
+              const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Enter your email and create a new password to get goin!'),
+              ),
               TextField(
                   controller: _email,
                   enableSuggestions: false,
@@ -78,7 +81,9 @@ class _RegisterViewState extends State<RegisterView> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
                     hintText: "Enter your email",
+                    border: OutlineInputBorder(),
                   )),
+              const SizedBox(height: 10,),
               TextField(
                   controller: _password,
                   obscureText: true,
@@ -86,7 +91,9 @@ class _RegisterViewState extends State<RegisterView> {
                   autocorrect: false,
                   decoration: const InputDecoration(
                     hintText: "Enter your password",
+                    border: OutlineInputBorder(),
                   )),
+              const SizedBox(height: 15,),
               Center(
                 child: Column(
                   children: [
@@ -101,8 +108,19 @@ class _RegisterViewState extends State<RegisterView> {
                               ),
                             );
                       },
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(
+                          fontSize: 18.0,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        backgroundColor: Colors.blueGrey,
+                        foregroundColor: Colors.white,
+                      ),
                       child: const Text("Register"),
                     ),
+                    
                     TextButton(
                       onPressed: () {
                         context.read<AuthBloc>().add(
