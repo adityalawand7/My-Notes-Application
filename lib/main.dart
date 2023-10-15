@@ -21,12 +21,13 @@ void main() {
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         // useMaterial3: true,
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.,
       ),
       home: BlocProvider<AuthBloc>(
         create: (context) => AuthBloc(FirebaseAuthProvider()),
         child: const HomePage(),
       ),
+      debugShowCheckedModeBanner: false,
       routes: {
         createOrUpdateNoteRoute: (context) => const CreateUpdateNoteView(),
       },
