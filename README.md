@@ -13,6 +13,11 @@
     <li>Various measures in place to prevent weak passwords, invalid email addresses, etc.</li>
   </ul>
 
+  ## Screenshots
+
+  ![Screenshot 1](https://github.com/adityalawand7/My-Notes-Application/blob/main/App%20Images/registerScreen.jpg)
+  ![Screenshot 2](https://github.com/adityalawand7/My-Notes-Application/blob/main/App%20Images/loginScreen.jpg)
+  
   <h2>Getting Started</h2>
 
   <ol>
