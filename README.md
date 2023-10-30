@@ -2,7 +2,7 @@
 <body>
   <h1>Flutter Notes App</h1>
 
-  <p>A flutter app for creating and updating notes.</p>
+  <p>A flutter app for creating and updating notes. </p>
 
   <h2>Features</h2>
 
